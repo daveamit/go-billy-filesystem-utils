@@ -1,4 +1,5 @@
 [![Test](https://github.com/daveamit/go-billy-filesystem-utils/workflows/Test/badge.svg)](https://github.com/daveamit/go-billy-filesystem-utils/actions?query=workflow%3ATest)
+![Coverage](https://img.shields.io/badge/Coverage-87.0%25-brightgreen)
 
 # Utils for [billy.Filesystem](github.com/go-git/go-billy) based filesystem 
 This package contains following most commanly used utility functions
