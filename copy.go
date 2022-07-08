@@ -1,7 +1,6 @@
 package utils
 
 import (
-	"io/fs"
 	"os"
 
 	"github.com/go-git/go-billy/v5"
@@ -12,7 +11,7 @@ import (
 func CopyFile(fs billy.Filesystem, src string, dst string) error {
 	return CopyFileWithParams(fs, src, dst, true, 0700)
 }
-func CopyFileWithParams(bfs billy.Filesystem, src string, dst string, overwrite bool, perm fs.FileMode) error {
+func CopyFileWithParams(bfs billy.Filesystem, src string, dst string, overwrite bool, perm os.FileMode) error {
 	// verify that src exsists
 	{
 		fileInfo, err := bfs.Lstat(src)
