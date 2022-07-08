@@ -17,7 +17,10 @@ jobs:
     - name: Run Test
       run: |
         go test -v ./... -covermode=count -coverprofile=coverage-raw.out
-        go tool cover -func=coverage-raw.out > coverage.out
+    - name: Run Cover
+      run: |
+        continue-on-error: true
+        go tool cover -func=coverage-raw.out > coverage.out && coverage-raw.out
     - name: Go Coverage Badge  # Pass the `coverage.out` output to this action
       uses: tj-actions/coverage-badge-go@v1.2
       with:
