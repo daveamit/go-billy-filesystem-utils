@@ -22,10 +22,12 @@ jobs:
       run: |
         go tool cover -func=coverage-raw.out > coverage.out && rm coverage-raw.out
     - name: Go Coverage Badge  # Pass the `coverage.out` output to this action
+      continue-on-error: true
       uses: tj-actions/coverage-badge-go@v1.2
       with:
         filename: coverage.out
     - name: Verify Changed files
+      continue-on-error: true
       uses: tj-actions/verify-changed-files@v9.1
       id: verify-changed-files
       with:
